@@ -1,0 +1,26 @@
+:root {
+  --fullWidth: 100%;
+}
+
+body {
+  font-size: 10px;
+  margin: 0;
+}
+
+.gallery-component-section_title {
+  font-size: 2em;
+}
+.gallery-component-section {
+  padding: 1em;
+}
+
+.gallery-images-container {
+  width: var(--fullWidth);
+  display: grid;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  width: 200px;
+  margin: 0 1em;
+}
