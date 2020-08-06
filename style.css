@@ -17,10 +17,9 @@ body {
 .gallery-images-container {
   width: var(--fullWidth);
   display: grid;
-  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .image-container {
   width: 200px;
-  margin: 0 1em;
 }

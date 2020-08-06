@@ -3,24 +3,25 @@ function getElements(type) {
   return elements;
 }
 
-// ".gallery-image"
-
 function loadGallery() {
   const images = getElements(".gallery-image");
+  const galleryListContainer = images[0].parentElement.parentElement;
+  const imageContainer = images[0].parentElement;
+  var gridRationWidth =
+    galleryListContainer.clientWidth / imageContainer.clientWidth;
+  gridRationWidth = Math.round(gridRationWidth);
+
+  galleryListContainer.style.gridTemplateColumns = `repeat(${gridRationWidth}, 1fr)`;
+  const imagesLength = images.length;
 
   images.forEach((e) => {
     var realWidth = e.naturalWidth;
     var realHeight = e.naturalHeight;
-
-    var change = realWidth / 200;
-
+    var change = realWidth / e.parentElement.clientWidth;
     var newHeight = realHeight / change;
-    // e.parentElement.style.maxHeight = e.naturalHeight;
     console.log(realWidth + " " + realHeight);
-    // e.style.height = "100%";
     e.style.width = "100%";
     e.parentElement.style.height = newHeight + "px";
-    // e.parentElement.style.width = "50px";
   });
 }
 
